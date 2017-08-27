@@ -1,0 +1,2 @@
+?package(take-a-break):needs="text" section="Applications/Science/Biology"\
+  title="take-a-break" command="/usr/bin/take-a-break"

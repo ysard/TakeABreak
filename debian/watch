@@ -1,0 +1,23 @@
+# you can run the "uscan" command
+# to check for upstream updates and more.
+# See uscan(1) for format
+
+# Compulsory line, this is a version 3 file
+version=3
+
+# Uncomment to examine a Webpage
+# <Webpage URL> <string match>
+https://github.com/GATB/TakeABreak/releases/download/v(.*)/TakeABreak-v(.*)-Source\.tar\.gz
+#https://github.com/GATB/TakeABreak/releases/download/v1.1.2/TakeABreak-v1.1.2-Source.tar.gz
+
+# Uncomment to examine a Webserver directory
+#http://www.example.com/pub/leon-(.*)\.tar\.gz
+
+# Uncommment to examine a FTP server
+#ftp://ftp.example.com/pub/leon-(.*)\.tar\.gz debian uupdate
+
+# Uncomment to find new files on sourceforge, for devscripts >= 2.9
+# http://sf.net/leon/leon-(.*)\.tar\.gz
+
+# Uncomment to find new files on GooglePages
+# http://example.googlepages.com/foo.html leon-(.*)\.tar\.gz

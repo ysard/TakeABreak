@@ -1,0 +1,44 @@
+Index: take-a-break-1.1.2/src/DBGWalker.cpp
+===================================================================
+--- take-a-break-1.1.2.orig/src/DBGWalker.cpp	2017-07-21 19:38:03.000000000 +0200
++++ take-a-break-1.1.2/src/DBGWalker.cpp	2017-07-21 19:45:36.000000000 +0200
+@@ -72,7 +72,7 @@
+     }
+ //    cout<<"depth = "<<depth<<endl;
+     // go on on all soons.
+-    Graph::Vector<Node> neighbor = _graph.neighbors (nodeA, DIR_OUTCOMING);
++    GraphVector<Node> neighbor = _graph.neighbors (nodeA, DIR_OUTCOMING);
+ //    cout<<" n size =  "<<neighbor.size()<<endl;
+     for(int i=0;i<neighbor.size();i++) recursive_find_all_at_depth(neighbor[i],depth-1, maxOtherSize);
+ //    cout<<"finish depth = "<<depth<<endl;
+@@ -138,7 +138,7 @@
+         return;
+     
+     // go on on all sons.
+-    Graph::Vector<Node> neighbor = _graph.neighbors (cur, DIR_OUTCOMING);
++    GraphVector<Node> neighbor = _graph.neighbors (cur, DIR_OUTCOMING);
+     for(int i=0;i<neighbor.size();i++) recursive_find_B(neighbor[i],
+                                                         size_tolerance_rc,
+                                                         depth-1,
+Index: take-a-break-1.1.2/src/TakeABreak.cpp
+===================================================================
+--- take-a-break-1.1.2.orig/src/TakeABreak.cpp	2017-07-21 19:38:03.000000000 +0200
++++ take-a-break-1.1.2/src/TakeABreak.cpp	2017-07-21 19:46:11.000000000 +0200
+@@ -809,7 +809,7 @@
+             continue;
+         }
+         // get all immediate out-neighbors of node A
+-        Graph::Vector<Node> neighborsA = ref._graph.neighbors (nodeA, DIR_OUTCOMING);
++        GraphVector<Node> neighborsA = ref._graph.neighbors (nodeA, DIR_OUTCOMING);
+ 
+ #ifdef debug
+         cout<<neighborsA.size()<<" immediate neighbor"<<endl;
+@@ -969,7 +969,7 @@
+     //for(int i=0;i<_kmerSize && check;i++){
+         check=false;
+         // We retrieve all outcoming edges from current nodes
+-        Graph::Vector<Edge> edges = _graph.neighborsEdge (currentNode, DIR_OUTCOMING);
++        GraphVector<Edge> edges = _graph.neighborsEdge (currentNode, DIR_OUTCOMING);
+         int j=0;
+         // cout << "step i=" << i << endl;
+         

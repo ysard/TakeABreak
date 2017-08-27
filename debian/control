@@ -1,0 +1,20 @@
+Source: take-a-break
+Section: science
+Priority: optional
+Maintainer: Pierre Vignet <pierre.vignet.contact@caramail.fr>
+Build-Depends: debhelper (>= 9), cmake
+Standards-Version: 3.9.5
+Homepage: https://github.com/GATB/TakeABreak
+#Vcs-Git: git://anonscm.debian.org/collab-maint/take-a-break.git
+#Vcs-Browser: http://anonscm.debian.org/?p=collab-maint/take-a-break.git;a=summary
+
+Package: take-a-break
+Architecture: any
+Recommends: gatbcore-tools
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Detection of inversion breakpoints in read datasets
+ TakeABreak detects inversion breakpoints without a reference genome by
+ looking for fixed size topological patterns in the de Bruijn graph. 
+ TakeABreak requires small memory configuration and processes data quickly.
+ For example, Illumina reads simulated at 2x40x coverage from human 
+ chromosome 22 can be processed in 2 hours and 1GB of memory.

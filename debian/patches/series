@@ -1,0 +1,4 @@
+link_to_libgatbcore.patch
+fix_compatibility_gatbcore_1.3.0.patch
+fix_missing_property_error_and_segfault_on_gatbcore_1.3.0.patch
+remove_unwanted_files_from_release.patch

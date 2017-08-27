@@ -1,0 +1,17 @@
+Index: take-a-break-1.1.2/CMakeLists.txt
+===================================================================
+--- take-a-break-1.1.2.orig/CMakeLists.txt	2017-07-21 19:56:30.110387160 +0200
++++ take-a-break-1.1.2/CMakeLists.txt	2017-07-21 20:00:55.642391464 +0200
+@@ -135,10 +135,10 @@
+ 
+ # We copy some files to the binary archive
+ INSTALL (TARGETS    ${PROJECT_NAME}                        DESTINATION bin)
+-INSTALL (DIRECTORY "${PROJECT_SOURCE_DIR}/tests/data"      DESTINATION .)
++# INSTALL (DIRECTORY "${PROJECT_SOURCE_DIR}/tests/data"      DESTINATION .)
+ #INSTALL (DIRECTORY "${PROJECT_SOURCE_DIR}/tests/gold"      DESTINATION tests)
+ #INSTALL (FILES     tests/run-tests.sh tests/simple_test.sh DESTINATION tests)
+-INSTALL (FILES     LICENSE README.md CHANGELOG.md          DESTINATION bin/..)
++# INSTALL (FILES     LICENSE README.md CHANGELOG.md          DESTINATION bin/..)
+ 
+ # We include the "bin" tag into binary archive file name
+ set (CPACK_PACKAGE_FILE_NAME  ${PROJECT_NAME}-${CPACK_PACKAGE_VERSION}-bin-${CMAKE_SYSTEM_NAME})

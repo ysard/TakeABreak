@@ -1,0 +1,69 @@
+.\"                                      Hey, EMACS: -*- nroff -*-
+.\" (C) Copyright 2017 Pierre Vignet <pierre.vignet.contact@caramail.fr>,
+.\"
+.\" First parameter, NAME, should be all caps
+.\" Second parameter, SECTION, should be 1-8, maybe w/ subsection
+.\" other parameters are allowed: see man(7), man(1)
+.TH TAKE-A-BREAK 1 "July 21, 2017"
+.\" Please adjust this date whenever revising the manpage.
+.\"
+.\" Some roff macros, for reference:
+.\" .nh        disable hyphenation
+.\" .hy        enable hyphenation
+.\" .ad l      left justify
+.\" .ad b      justify to both left and right margins
+.\" .nf        disable filling
+.\" .fi        enable filling
+.\" .br        insert line break
+.\" .sp <n>    insert n+1 empty lines
+.\" for manpage-specific macros, see man(7)
+.SH NAME
+take\-a\-break \- program to detect inversion breakpoints in read datasets without a reference genome.
+
+.SH DESCRIPTION
+TakeABreak detects inversion breakpoints without a reference genome by looking 
+for fixed size topological patterns in the de Bruijn graph. TakeABreak 
+requires small memory configuration and processes data quickly. 
+For example, Illumina reads simulated at 2x40x coverage from human 
+chromosome 22 can be processed in 2 hours and 1GB of memory.
+
+.SH OPTIONS
+TODO
+
+.SH EXAMPLES
+This toy example can be run with the provided data.
+
+.BI "Example from raw input reads:"
+.PP
+.RS
+take\-a\-break \-in tests/data/toy_example_reads.fasta,tests/data/toy_example_with_inv_reads.fasta \-out MyFirstTakeABreakExperiment
+
+NOTE: the input read files are simply separated by comma without spaces.
+
+This command line first computes the de Bruijn graph (saved in the file MyFirstTakeABreakExperiment.h5) 
+before searching for the 6 artificial inversions contained in the input read sets and finally 
+it outputs the inversion breakpoints in the file MyFirstTakeABreakExperiment.fasta.
+.RE
+.PP
+
+.BI "Example from an already created de Bruijn graph (MyFirstTakeABreakExperiment.h5)"
+.PP
+.RS
+take\-a\-break \-graph MyFirstTakeABreakExperiment.h5 \-out MySecondTakeABreakExperiment
+
+This command line uses the already computed de Bruijn graph (MyFirstTakeABreakExperiment.h5) 
+to detect the 6 artificial inversions and outputs them in MySecondTakeABreakExperiment.fasta.
+.RE
+.PP
+
+
+.SH "SEE ALSO"
+.BR bloocoo (1)
+.br
+The programs are documented fully by the Genscale Team
+available at https://github.com/GATB/TakeABreak
+
+.SH AUTHORS
+This manual page was written by Pierre Vignet <pierre.vignet.contact@caramail.fr>
+for the Debian project (and may be used by others).
+
